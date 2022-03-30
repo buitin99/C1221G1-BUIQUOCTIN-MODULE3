@@ -24,8 +24,8 @@ credit tinyint not null default 1 check ( credit >= 1 ),
 status bit default 1);
 create table quan_ly_sinh_vien.mark(
 mark_id int auto_increment not null,
-sub_id int not null unique,
-student_id int not null unique,
+sub_id int not null,
+student_id int not null,
 mark float default 0 check (mark between 0 and 100),
 exam_times tinyint default 1,
 primary key (mark_id));
@@ -39,5 +39,5 @@ values ("Thong","HaNoi", "0123456789",1,1),("Da","HaNoi", "0123456789",1,1),("Gi
 insert into quan_ly_sinh_vien.`subject`
 values (1,"CF",5,1),(2,"C",6,1),(3,"HDJ",5,1),(4,"RDMS",10,1);
 
-insert into quan_ly_sinh_vien.mark(sub_id,student_id,mark,exam_times)
+insert into mark(sub_id,student_id,mark,exam_times)
 values (1,1,8,1),(1,2,10,2),(2,1,12,1);
