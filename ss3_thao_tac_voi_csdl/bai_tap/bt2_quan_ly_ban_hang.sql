@@ -38,10 +38,16 @@ insert into quan_ly_ban_hang.product (pname,pprice) values ("May Lanh",3),("Tu L
 insert into quan_ly_ban_hang.orderdetail(oid,pid,odqty) values (1,1,"3"),(1,3,"7"),(1,4,"2"),(2,1,"1"),(3,1,"8"),(2,5,"4"),(2,3,"3");
 
 select oid,odate,ototalprice from `order`;
+
 select customer.cname,product.pname from customer
  join `order` on customer.cid = `order`.oid 
  join orderdetail on `order`.oid = orderdetail.oid 
  join product on orderdetail.oid = product.pid;
+ 
+ select customer.cname from `order` right join customer on `order`.cid = customer.cid where `order`.cid is null ;
+ 
+ select `order`.oid,`order`.odate,product.pprice, sum(pprice*odqty) from `order` join orderdetail on `order`.oid = orderdetail.oid join product on orderdetail.pid = product.pid group by `order`.oid;
+
 
 
 
