@@ -210,6 +210,9 @@ VALUES  ('1', '2', '4', '5'),
 		('7', '1', '2', '2'),
 		('8', '12', '2', '2');
 
+SELECT ho_ten FROM nhan_vien WHERE nhan_vien.ho_ten REGEXP '^[HKT]' AND LENGTH(ho_ten) <= 15;
+
+select*from khach_hang where (datediff(curdate() , khach_hang.ngay_sinh)/365 <50 and datediff(curdate() , khach_hang.ngay_sinh)/365 > 18) and (khach_hang.dia_chi like "%Đà Nẵng%" or khach_hang.dia_chi like "%Quảng Trị%");
 
 
 
