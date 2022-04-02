@@ -62,9 +62,12 @@ values (1, 1, 8, 1),
        (1, 2, 10, 2),
        (2, 1, 12, 1);
        
+-- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.       
 select `subject`.sub_name,`subject`.credit from `subject` where credit = (select max(credit) from `subject`);
 
-select*from `subject` inner join mark on `subject`.sub_id = mark.sub_id group by `subject`.sub_id having max(mark) >= all (select max(mark) from mark group by mark.sub_id) ;
+-- Hiển thị các thông tin môn học có điểm thi lớn nhất.
+select*from `subject` inner join mark on `subject`.sub_id = mark.sub_id group by `subject`.sub_id having max(mark) >= all (select max(mark) from mark group by mark.sub_id);
 
+-- Hiển thị các thông tin sinh viên và điểm trung bình của mỗi sinh viên, xếp hạng theo thứ tự điểm giảm dần
 select student.student_name, avg(mark.mark) as avg_mark from student inner join mark on student.student_id = mark.student_id group by student.student_id order by mark desc;
 
