@@ -1,6 +1,9 @@
 create database san_pham;
 use san_pham;
 
+
+-- tạo table product
+
 create table product(
 id int auto_increment primary key,
 product_code int not null,
@@ -9,6 +12,8 @@ product_price double not null,
 product_amount int not null,
 product_description varchar(50),
 product_status varchar(50));
+
+-- bước 2 tạo csdl tự cho
 
 insert into product(product_code,product_name,product_price,product_amount,product_description,product_status) 
 values (10,"Bánh",2000,2,"Bánh","còn hàng"),
@@ -22,7 +27,8 @@ values (10,"Bánh",2000,2,"Bánh","còn hàng"),
 (90,"Đậu",8000,6,"Đậu","còn hàng"),
 (100,"Sữa",9000,2,"Sữa","còn hàng");
 
--- bước 3
+-- bước 3 tạo unique index và index
+
 create view product_view as select product_code,product_price from product;
 select* from product_view;
 
@@ -42,7 +48,7 @@ explain select* from product where product_code = "20";
 
 explain select*from product where product_name = "Bánh" and product_price = 2000;
 
--- bước 4
+-- bước 4 tạo view
 
 create view all_product_view as select product_code, product_name, product_price, product_status from product;
 
@@ -50,7 +56,7 @@ update all_product_view set product_code  = 110 where product_code = 100;
 
 drop view all_product_view;
 
--- bước 5
+-- bước 5 tạo Stored Procedures
 
 DELIMITER //
 CREATE PROCEDURE produce_product()
@@ -59,17 +65,20 @@ select*from product;
 END; //
 DELIMITER ;
 
+-- sửa sản phẩm theo id
 
 DELIMITER //
-CREATE PROCEDURE edit_product_by_id(in id int(55), in `code` varchar(50), in`name` varchar(50),in price varchar(50),in `status` varchar(50))
+CREATE PROCEDURE edit_product_by_id(in id int(55), `code` varchar(50), `name` varchar(50), price varchar(50), `status` varchar(50))
 BEGIN
-update product set product.product_code = `code`,product.product_name = `name`, product.product_price = price, product.product_status = `status` where product.product_id = id ;
+update product set product.product_code = `code`,product.product_name = `name`, product.product_price = price, product.product_status = `status` where product.id = id ;
 END; //
 DELIMITER ;
 
 set sql_safe_updates = 0;
-call edit_product_by_id(3,"50","tiền",2000,"hết hàng");
+call edit_product_by_id(3,"990","tiền",2000,"hết hàng");
 set sql_safe_updates = 0;
+
+-- xóa sản phẩn theo id
 
 DELIMITER //
 CREATE PROCEDURE delete_product_by_id(in id int(55))
