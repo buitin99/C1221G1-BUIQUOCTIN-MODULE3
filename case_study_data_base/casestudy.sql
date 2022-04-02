@@ -221,5 +221,12 @@ select khach_hang.ho_va_ten, count(hop_dong.ma_khach_hang) as so_lan_dat_phong f
 select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as tong_tien from loai_khach right join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang right join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem group by khach_hang.ma_khach_hang order by khach_hang.ma_khach_hang;
 -- select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as tong_tien from loai_khach right join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang right join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu right join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem group by khach_hang.ma_khach_hang order by khach_hang.ma_khach_hang;
 
+select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu from loai_dich_vu join dich_vu on loai_dich_vu.ma_loai_dich_vu = dich_vu.ma_dich_vu left join hop_dong on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu where (hop_dong.ngay_ket_thuc_hop_dong < "2021-01-01") or  (hop_dong.ngay_ket_thuc_hop_dong < "2021-02-01") or  (hop_dong.ngay_ket_thuc_hop_dong < "2021-03-01")  ;
+
+-- 7
+-- 8
+select khach_hang.ho_va_ten from khach_hang union 
+select khach_hang.ho_va_ten from khach_hang;
+
 
 
