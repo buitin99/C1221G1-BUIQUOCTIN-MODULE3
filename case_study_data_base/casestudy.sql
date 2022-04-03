@@ -210,23 +210,48 @@ VALUES  ('1', '2', '4', '5'),
 		('7', '1', '2', '2'),
 		('8', '12', '2', '2');
 
-SELECT ho_ten FROM nhan_vien WHERE nhan_vien.ho_ten REGEXP '^[HKT]' AND LENGTH(ho_ten) <= 15;
+SELECT ho_ten FROM nhan_vien WHERE nhan_vien.ho_ten REGEXP '^[HKT]' AND LENGTH(ho_ten) <= 16;
 
-select*from khach_hang where (datediff(curdate() , khach_hang.ngay_sinh)/365 <50 and datediff(curdate() , khach_hang.ngay_sinh)/365 > 18) and (khach_hang.dia_chi like "%Đà Nẵng%" or khach_hang.dia_chi like "%Quảng Trị%");
+select*from khach_hang where (datediff(curdate() , khach_hang.ngay_sinh)/365 <50 and datediff(curdate() , khach_hang.ngay_sinh)/365 > 18) 
+and (khach_hang.dia_chi like "%Đà Nẵng%" or khach_hang.dia_chi like "%Quảng Trị%");
 
-select khach_hang.ho_va_ten, count(hop_dong.ma_khach_hang) as so_lan_dat_phong from loai_khach right join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang where loai_khach.ten_loai_khach = 'Diamond' group by khach_hang.ho_va_ten having so_lan_dat_phong > 0 order by so_lan_dat_phong;
+select khach_hang.ho_va_ten, count(hop_dong.ma_khach_hang) as so_lan_dat_phong from loai_khach right join khach_hang 
+on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang 
+where loai_khach.ten_loai_khach = 'Diamond' group by khach_hang.ho_va_ten having so_lan_dat_phong > 0 order by so_lan_dat_phong;
 
--- select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong ,dich_vu.ten_dich_vu, hop_dong.ngay_lam_hop_dong , hop_dong.ngay_ket_thuc_hop_dong, sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu.chi_phi_thue) as tong_tien from loai_khach join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu group by khach_hang.ma_khach_hang order by khach_hang.ma_khach_hang;
 
-select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as tong_tien from loai_khach right join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang right join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem group by khach_hang.ma_khach_hang order by khach_hang.ma_khach_hang;
--- select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as tong_tien from loai_khach right join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang right join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu right join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem group by khach_hang.ma_khach_hang order by khach_hang.ma_khach_hang;
 
-select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu from loai_dich_vu join dich_vu on loai_dich_vu.ma_loai_dich_vu = dich_vu.ma_dich_vu left join hop_dong on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu where (hop_dong.ngay_ket_thuc_hop_dong < "2021-01-01") or  (hop_dong.ngay_ket_thuc_hop_dong < "2021-02-01") or  (hop_dong.ngay_ket_thuc_hop_dong < "2021-03-01")  ;
+select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as tong_tien 
+from loai_khach right join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach left join hop_dong 
+on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang right join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu 
+left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong left join dich_vu_di_kem 
+on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem group by khach_hang.ma_khach_hang 
+order by khach_hang.ma_khach_hang;
+
+-- 6
+select distinct dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu from loai_dich_vu 
+right join dich_vu on loai_dich_vu.ma_loai_dich_vu = dich_vu.ma_dich_vu 
+right join hop_dong on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu 
+where dich_vu.ma_dich_vu 
+not in (select hop_dong.ma_dich_vu from hop_dong where hop_dong.ngay_lam_hop_dong between '2021-01-01' and '2021-03-31');
+
 
 -- 7
+select distinct dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.so_nguoi_toi_da, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu 
+from loai_dich_vu join dich_vu on loai_dich_vu.ma_loai_dich_vu = dich_vu.ma_loai_dich_vu join hop_dong 
+on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu join khach_hang 
+on hop_dong.ma_khach_hang = khach_hang.ma_khach_hang 
+where (dich_vu.ma_dich_vu in (select hop_dong.ma_dich_vu from hop_dong where year(hop_dong.ngay_lam_hop_dong)=2020) ) and ( dich_vu.ma_dich_vu not in (select hop_dong.ma_dich_vu from hop_dong where year(hop_dong.ngay_lam_hop_dong)=2021));
 -- 8
 select khach_hang.ho_va_ten from khach_hang union 
 select khach_hang.ho_va_ten from khach_hang;
 
+select distinct ho_va_ten from khach_hang;
 
-
+select ho_va_ten from khach_hang  group by khach_hang.ho_va_ten;
+-- 9 
+select month(hop_dong.ngay_lam_hop_dong), count(khach_hang.ma_khach_hang) from hop_dong join khach_hang on hop_dong.ma_khach_hang = khach_hang.ma_khach_hang 
+where year(hop_dong.ngay_lam_hop_dong) = 2021 group by month(hop_dong.ngay_lam_hop_dong) order by month(hop_dong.ngay_lam_hop_dong);
+-- 10
+select hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, hop_dong.tien_dat_coc, sum(hop_dong_chi_tiet.so_luong) as so_luong_dich_vu_di_kem
+from hop_dong left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong group by hop_dong.ma_hop_dong order by hop_dong.ma_hop_dong;   
