@@ -227,15 +227,15 @@ select khach_hang.ho_va_ten, count(hop_dong.ma_khach_hang) as so_lan_dat_phong f
 on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang 
 where loai_khach.ten_loai_khach = 'Diamond' group by khach_hang.ho_va_ten having so_lan_dat_phong > 0 order by so_lan_dat_phong;
 
-
 -- 5. Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong, ten_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, 
 -- tong_tien (Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá, với Số Lượng và Giá là từ bảng dich_vu_di_kem,
 -- hop_dong_chi_tiet) cho tất cả các khách hàng đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
 
-select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, 
+select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong,
+hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, 
 sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as tong_tien 
-from loai_khach right join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach left join hop_dong 
-on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang right join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu 
+from loai_khach  join khach_hang on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach join hop_dong 
+on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu 
 left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong left join dich_vu_di_kem 
 on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem group by khach_hang.ma_khach_hang 
 order by khach_hang.ma_khach_hang;
@@ -277,7 +277,8 @@ where year(hop_dong.ngay_lam_hop_dong) = 2021 group by month(hop_dong.ngay_lam_h
 -- 10.Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm. Kết quả hiển thị bao gồm ma_hop_dong, 
 -- ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
 
-select hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, hop_dong.tien_dat_coc, sum(hop_dong_chi_tiet.so_luong) as so_luong_dich_vu_di_kem
+select hop_dong.ma_hop_dong, hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, hop_dong.tien_dat_coc,
+ sum(hop_dong_chi_tiet.so_luong) as so_luong_dich_vu_di_kem
 from hop_dong left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong group by hop_dong.ma_hop_dong order by hop_dong.ma_hop_dong;   
 
 -- 11.	Hiển thị thông tin các dịch vụ đi kèm đã được sử dụng bởi những khách hàng có ten_loai_khach là “Diamond” và có dia_chi ở 
