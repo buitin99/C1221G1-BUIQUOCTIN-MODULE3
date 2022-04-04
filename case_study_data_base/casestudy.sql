@@ -316,14 +316,9 @@ group by khach_hang.ho_va_ten having sum(dich_vu.chi_phi_thue + hop_dong_chi_tie
  
 set sql_safe_updates = 0;	
 update khach_hang, (select ma_khach_hang from khach_hang_view ) as view_khach_hang
-set khach_hang.ma_loai_khach = '1' where khach_hang.ma_loai_khach in (select khach_hang.ma_loai_khach from khach_hang_view);  
+set khach_hang.ma_loai_khach = '1' where khach_hang.ma_khach_hang = view_khach_hang.ma_khach_hang;  
 set sql_safe_updates = 1;
 	
-set sql_safe_updates = 0;	
-update dich_vu_di_kem, (select ma_dich_vu_di_kem from dich_vu_view) as view_select
-set gia = gia*2 where dich_vu_di_kem.ma_dich_vu_di_kem = view_select.ma_dich_vu_di_kem;  
-set sql_safe_updates = 1;
-
 -- 18
 
 select khach_hang.ma_khach_hang, khach_hang.ho_va_ten from hop_dong 
@@ -337,8 +332,6 @@ delete khach_hang  from hop_dong join khach_hang on hop_dong.ma_khach_hang = kha
 set sql_safe_updates =1;
 set foreign_key_checks =1;
 
-
-
 -- 19
 drop view dich_vu_view;
 
@@ -348,18 +341,7 @@ from dich_vu_di_kem join hop_dong_chi_tiet
 on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem 
 join hop_dong on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
 where hop_dong_chi_tiet.so_luong > 10 and (hop_dong.ngay_lam_hop_dong > '2020-01-01' and hop_dong.ngay_lam_hop_dong < '2020-12-31');
-set sql_safe_updates = 0;	
-update dich_vu_di_kem dvdk
-set dvdk.gia = dvdk.gia *2
-where dvdk.ma_dich_vu_di_kem in (select ma_dich_vu_di_kem from dich_vu_view);
-set sql_safe_updates = 1;
-drop view dich_vu_view;
 
-
-set sql_safe_updates = 0;	
-update dich_vu_di_kem, (select ma_dich_vu_di_kem from dich_vu_view) as view_select
-set gia = gia*2 where dich_vu_di_kem.ma_dich_vu_di_kem = view_select.ma_dich_vu_di_kem;  
-set sql_safe_updates = 1;
 
 set sql_safe_updates = 0;	
 update dich_vu_di_kem, (select ma_dich_vu_di_kem from dich_vu_view) as view_select
