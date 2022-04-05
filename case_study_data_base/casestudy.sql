@@ -351,7 +351,7 @@ group by khach_hang.ho_va_ten having sum(dich_vu.chi_phi_thue + hop_dong_chi_tie
  
 set sql_safe_updates = 0;	
 update khach_hang, (select ma_khach_hang from khach_hang_view ) as view_khach_hang
-set khach_hang.ma_loai_khach = '1' where khach_hang.ma_khach_hang = view_khach_hang.ma_khach_hang;  
+set khach_hang.ma_loai_khach = 1 where khach_hang.ma_khach_hang = view_khach_hang.ma_khach_hang;  
 set sql_safe_updates = 1;
 	
 -- 18 Xóa những khách hàng có hợp đồng trước năm 2021 (chú ý ràng buộc giữa các bảng).
@@ -387,4 +387,74 @@ set sql_safe_updates = 1;
 -- thông tin hiển thị bao gồm id (ma_nhan_vien, ma_khach_hang), ho_ten, email, so_dien_thoai, ngay_sinh, dia_chi.
 select nhan_vien.ma_nhan_vien, nhan_vien.ho_ten, nhan_vien.email, nhan_vien.so_dien_thoai, nhan_vien.dia_chi from nhan_vien union all
 select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, khach_hang.email, khach_hang.so_dien_thoai, khach_hang.dia_chi from khach_hang;
+
+--
+create view dich_vu_view as
+select dich_vu_di_kem.ma_dich_vu_di_kem,hop_dong_chi_tiet.so_luong, dich_vu_di_kem.ten_dich_vu_di_kem
+from dich_vu_di_kem join hop_dong_chi_tiet 
+on dich_vu_di_kem.ma_dich_vu_di_kem = hop_dong_chi_tiet.ma_dich_vu_di_kem 
+join hop_dong on hop_dong_chi_tiet.ma_hop_dong = hop_dong.ma_hop_dong
+where hop_dong_chi_tiet.so_luong > 10 and (hop_dong.ngay_lam_hop_dong > '2020-01-01' and hop_dong.ngay_lam_hop_dong < '2020-12-31') 
+group by hop_dong_chi_tiet.ma_dich_vu_di_kem;
+
+set sql_safe_updates = 0;	
+update dich_vu_di_kem
+set gia = gia*2 where dich_vu_di_kem.ma_dich_vu_di_kem in (select ma_dich_vu_di_kem from dich_vu_view); 
+set sql_safe_updates = 1;
+
+-- 21
+INSERT INTO `casestudy_database`.`nhan_vien` (`ma_nhan_vien`, `ho_ten`, `ngay_sinh`, `so_cmnd`, `luong`, `so_dien_thoai`, `email`, `dia_chi`, `ma_vi_tri`, `ma_trinh_do`, `ma_bo_phan`) 
+VALUES ('11', 'Bùi Quốc Tín', '1999-01-25', '123323321', '8000000', '0123456789', 'buiquoctin250199@gmail.com', '7 Hải Châu, Đà Nẵng', '2', '3', '4');
+
+INSERT INTO `casestudy_database`.`hop_dong` (`ma_hop_dong`, `ngay_lam_hop_dong`, `ngay_ket_thuc_hop_dong`, `tien_dat_coc`, `ma_nhan_vien`, `ma_khach_hang`, `ma_dich_vu`) 
+VALUES ('14', '2021-12-12 00:00:00', '2021-12-12 12:00:00', '500000', '11', '7', '3');
+
+create view v_nhan_vien as
+select nhan_vien.ho_ten,nhan_vien.dia_chi, nhan_vien.email from nhan_vien 
+join hop_dong on nhan_vien.ma_nhan_vien = hop_dong.ma_nhan_vien
+where hop_dong.ngay_lam_hop_dong = '2021-12-12' group by nhan_vien.ho_ten;
+
+-- 22
+
+set sql_safe_updates = 0;	
+update nhan_vien
+set dia_chi = 'Liên Chiểu' where nhan_vien.ho_ten in (select ho_ten from v_nhan_vien); 
+set sql_safe_updates = 1;
+
+-- 23
+
+INSERT INTO `casestudy_database`.`khach_hang` (`ma_khach_hang`, `ma_loai_khach`, `ho_va_ten`, `ngay_sinh`, `gioi_tinh`, `so_cmnd`, `so_dien_thoai`, `email`, `dia_chi`) 
+VALUES ('11', '1', 'Bùi Quốc Tín', '1999-01-25', b'1', '322322232', '0123456789', 'buiquoctin250199@gmail.com', 'Hải Châu, Đà Nẵng');
+
+DELIMITER //
+CREATE PROCEDURE sp_xoa_khach_hang(ID INT(55))
+BEGIN
+delete khach_hang from khach_hang where khach_hang.ma_khach_hang = ID;
+END //
+DELIMITER ;
+
+CALL sp_xoa_khach_hang(11);
+
+-- 24
+
+DELIMITER //
+CREATE PROCEDURE sp_them_moi_hop_dong()
+BEGIN
+insert into hop_dong (hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket_thuc_hop_dong,hop_dong.tien_dat_coc,
+hop_dong.ma_nhan_vien,hop_dong.ma_khach_hang,hop_dong.ma_dich_vu) values
+ ('2021-12-12', '2021-12-31', 500000, 3,7,1);
+END //
+DELIMITER ;
+
+CALL sp_them_moi_hop_dong();
+
+-- 25
+
+DELIMITER //
+CREATE TRIGGER tr_xoa_hop_dong 
+ON hop_dong 
+FOR EACH ROW
+BEGIN
+END
+DELIMITER ;
 
