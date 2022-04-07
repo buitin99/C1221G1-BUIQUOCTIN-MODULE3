@@ -1,0 +1,31 @@
+#H1{
+    float: right;
+    width: 60%;
+    height: 400px;
+    text-indent: 60px;
+    text-align: justify;
+}
+#I1{
+    float: left;
+    width: 40%;
+    height: 300px;
+}
+
+#H2{
+    float: left;
+    width: 60%;
+    height: 400px;
+    text-indent: 60px;
+    text-align: justify;
+}
+#I2{
+    float: right;
+    width: 33%;
+    height: 300px;
+}
+.xanh{
+    color: blue;
+}
+.do{
+    color: red;
+}
