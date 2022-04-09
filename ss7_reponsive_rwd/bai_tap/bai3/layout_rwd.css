@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
 }
 .row {
@@ -52,9 +52,19 @@
 .col-12 {
     width: 100%;
 }
-
 [class*="col-"] {
     float: left;
+    padding: 5px;
+}
+@media screen and (max-width: 1080px){
+    [class*= col-] {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 500px){
+    [class*= col-] {
+        width: 25%;
+    }
 }
 .head-left{
     display: flex;
@@ -64,7 +74,6 @@
 .head-left a{
     text-decoration: none;
     display: inline;
-    position: fl;
 }
 .head{
     height: 15%;
@@ -77,6 +86,10 @@
     background: lightgray;
 }
 .main{
+    float: left;
+    width: 70%;
+    margin: 0;
+    padding: 1em 40px;
 }
 .right{
     background: lightgray;
@@ -85,4 +98,7 @@
     height: 10%;
     width: 100%;
     background: black;
+}
+#nav{
+    float: left;
 }
