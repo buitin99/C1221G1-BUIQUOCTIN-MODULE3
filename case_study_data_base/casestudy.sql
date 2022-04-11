@@ -225,12 +225,12 @@ and (khach_hang.dia_chi like "%Đà Nẵng%" or khach_hang.dia_chi like "%Quản
 
 select khach_hang.ho_va_ten, count(hop_dong.ma_khach_hang) as so_lan_dat_phong from loai_khach join khach_hang 
 on loai_khach.ma_loai_khach = khach_hang.ma_loai_khach join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang 
-where loai_khach.ten_loai_khach = 'Diamond' group by khach_hang.ho_va_ten having so_lan_dat_phong > 0 order by so_lan_dat_phong;
+where loai_khach.ten_loai_khach = 'Diamond' group by khach_hang.ma_khach_hang having so_lan_dat_phong > 0 order by so_lan_dat_phong;
 
 -- 5. Hiển thị ma_khach_hang, ho_ten, ten_loai_khach, ma_hop_dong, ten_dich_vu, ngay_lam_hop_dong, ngay_ket_thuc, 
 -- tong_tien (Với tổng tiền được tính theo công thức như sau: Chi Phí Thuê + Số Lượng * Giá, với Số Lượng và Giá là từ bảng dich_vu_di_kem,
 -- hop_dong_chi_tiet) cho tất cả các khách hàng đã từng đặt phòng. (những khách hàng nào chưa từng đặt phòng cũng phải hiển thị ra).
-
+-- 
 select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong,
 hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, 
 sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as tong_tien 
@@ -239,15 +239,31 @@ on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang join dich_vu on hop_dong.ma
 left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong left join dich_vu_di_kem 
 on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem group by khach_hang.ma_khach_hang 
 order by khach_hang.ma_khach_hang;
+--
+select khach_hang.ma_khach_hang, khach_hang.ho_va_ten, loai_khach.ten_loai_khach, hop_dong.ma_hop_dong,
+hop_dong.ngay_lam_hop_dong, hop_dong.ngay_ket_thuc_hop_dong, dich_vu.ten_dich_vu, 
+sum(dich_vu.chi_phi_thue + hop_dong_chi_tiet.so_luong*dich_vu_di_kem.gia) as tong_tien from khach_hang 
+left join loai_khach on khach_hang.ma_loai_khach = loai_khach.ma_loai_khach 
+left join hop_dong on khach_hang.ma_khach_hang = hop_dong.ma_khach_hang 
+left join dich_vu on hop_dong.ma_dich_vu = dich_vu.ma_dich_vu 
+left join hop_dong_chi_tiet on hop_dong.ma_hop_dong = hop_dong_chi_tiet.ma_hop_dong 
+left join dich_vu_di_kem on hop_dong_chi_tiet.ma_dich_vu_di_kem = dich_vu_di_kem.ma_dich_vu_di_kem 
+group by hop_dong.ma_hop_dong 
+order by khach_hang.ma_khach_hang;
 
 -- 6 Hiển thị ma_dich_vu, ten_dich_vu, dien_tich, chi_phi_thue, 
 -- ten_loai_dich_vu của tất cả các loại dịch vụ chưa từng được khách hàng thực hiện đặt từ quý 1 của năm 2021 (Quý 1 là tháng 1, 2, 3).
-
+--
 select distinct dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu from loai_dich_vu 
 right join dich_vu on loai_dich_vu.ma_loai_dich_vu = dich_vu.ma_dich_vu 
 right join hop_dong on dich_vu.ma_dich_vu = hop_dong.ma_dich_vu 
 where dich_vu.ma_dich_vu 
-not in (select hop_dong.ma_dich_vu from hop_dong where hop_dong.ngay_lam_hop_dong between '2021-01-01' and '2021-03-31');
+not in (select hop_dong.ma_dich_vu from hop_dong where hop_dong.ngay_lam_hop_dong between '2020-12-31' and '2021-03-31');
+--
+select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu from
+dich_vu join loai_dich_vu on dich_vu.ma_dich_vu = loai_dich_vu.ma_loai_dich_vu
+where not exists(select hop_dong.ma_dich_vu from hop_dong where (hop_dong.ngay_lam_hop_dong between '2020-12-31' and '2021-03-31')
+and hop_dong.ma_dich_vu = dich_vu.ma_dich_vu);
 
 -- 7 Hiển thị thông tin ma_dich_vu, ten_dich_vu, dien_tich, so_nguoi_toi_da, chi_phi_thue, ten_loai_dich_vu của tất cả các 
 -- loại dịch vụ đã từng được khách hàng đặt phòng trong năm 2020 nhưng chưa từng được khách hàng đặt phòng trong năm 2021. 
@@ -259,6 +275,10 @@ on hop_dong.ma_khach_hang = khach_hang.ma_khach_hang
 where (dich_vu.ma_dich_vu in (select hop_dong.ma_dich_vu from hop_dong where year(hop_dong.ngay_lam_hop_dong)=2020) ) 
 and ( dich_vu.ma_dich_vu not in (select hop_dong.ma_dich_vu from hop_dong where year(hop_dong.ngay_lam_hop_dong)=2021));
 
+select dich_vu.ma_dich_vu, dich_vu.ten_dich_vu, dich_vu.dien_tich, dich_vu.so_nguoi_toi_da, dich_vu.chi_phi_thue, loai_dich_vu.ten_loai_dich_vu
+from dich_vu join loai_dich_vu on dich_vu.ma_dich_vu = loai_dich_vu.ma_loai_dich_vu
+where exists(select hop_dong.ma_hop_dong from hop_dong where year(hop_dong.ngay_lam_hop_dong) = '2020' and hop_dong.ma_dich_vu = dich_vu.ma_dich_vu)
+and not exists(select hop_dong.ma_hop_dong from hop_dong where year(hop_dong.ngay_lam_hop_dong) = '2021' and hop_dong.ma_dich_vu = dich_vu.ma_dich_vu);
 -- 8 Hiển thị thông tin ho_ten khách hàng 
 -- có trong hệ thống, với yêu cầu ho_ten không trùng nhau.
 select khach_hang.ho_va_ten from khach_hang union 
@@ -273,6 +293,19 @@ select ho_va_ten from khach_hang  group by khach_hang.ho_va_ten;
 
 select month(hop_dong.ngay_lam_hop_dong), count(khach_hang.ma_khach_hang) from hop_dong join khach_hang on hop_dong.ma_khach_hang = khach_hang.ma_khach_hang 
 where year(hop_dong.ngay_lam_hop_dong) = 2021 group by month(hop_dong.ngay_lam_hop_dong) order by month(hop_dong.ngay_lam_hop_dong);
+
+select 1 as month
+union select 2 as month
+union select 3 as month
+union select 4 as month
+union select 5 as month
+union select 6 as month
+union select 7 as month
+union select 8 as month
+union select 9 as month
+union select 10 as month
+union select 11 as month
+union select 12 as month
 
 -- 10.Hiển thị thông tin tương ứng với từng hợp đồng thì đã sử dụng bao nhiêu dịch vụ đi kèm. Kết quả hiển thị bao gồm ma_hop_dong, 
 -- ngay_lam_hop_dong, ngay_ket_thuc, tien_dat_coc, so_luong_dich_vu_di_kem (được tính dựa trên việc sum so_luong ở dich_vu_di_kem).
@@ -457,4 +490,66 @@ FOR EACH ROW
 BEGIN
 END
 DELIMITER ;
+
+-- sửa case study
+-- task 25
+DELIMITER //
+CREATE TRIGGER tr_xoa_hop_dong AFTER DELETE
+ON hop_dong 
+FOR EACH ROW
+BEGIN
+SET @x = (SELECT count(*) AS FROM hop_dong);
+END
+DELIMITER ;
+set foreign_key_checks =0;
+SET @x = 0;
+DELETE FROM hop_dong where hop_dong.ma_hop_dong = 12;
+SELECT @x AS 'Total amount deleted' ;
+set foreign_key_checks =0;
+
+-- task 26
+DELIMITER //
+
+CREATE TRIGGER tr_cap_nhat_hop_dong
+    BEFORE UPDATE
+    ON hop_dong
+    FOR EACH ROW
+BEGIN
+    IF datediff(NEW.ngay_ket_thuc_hop_dong, NEW.ngay_lam_hop_dong) < 2 THEN
+    SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT ='Ngày kết thúc hợp đồng phải lớn hơn ngày làm hợp đồng ít nhất là 2 ngày';
+    END IF;
+END //
+DELIMITER ;
+
+UPDATE hop_dong set ngay_ket_thuc_hop_dong = '2021-09-08' WHERE ma_hop_dong = 7;
+
+-- task 27 
+delimiter //
+drop function if exists func_dem_dich_vu //
+create function func_dem_dich_vu() returns int
+deterministic 
+begin
+create temporary table temp
+(select count(distinct ma_dich_vu) from hop_dong where ma_dich_vu in (select distinct ma_dich_vu from hop_dong)
+group by ma_dich_vu having sum(tong_tien) > 2000000);
+set @tong_so_dich_vu = (select count(*) from temp);
+drop temporary table temp;
+return @tong_so_dich_vu;
+end;
+
+select func_dem_dich_vu() as 'Tổng số lượng dịch vụ có tổng tiền trên 2000000';
+
+delimiter //
+drop function if exists func_tinh_thoi_gian_hop_dong //
+create function func_tinh_thoi_gian_hop_dong(ma_khach_hang int ) returns int
+deterministic 
+begin
+	set @thoi_gian_dai_nhat = (select max(datediff(hop_dong.ngay_lam_hop_dong,hop_dong.ngay_ket)) from hop_dong
+    where hop_dong.ma_hop_dong = ma_khach_hang);
+    return @thoi_gian_dai_nhat;
+end;
+
+select func_tinh_thoi_gian_hop_dong(4) as 'thời gian dài nhất';
+
 
