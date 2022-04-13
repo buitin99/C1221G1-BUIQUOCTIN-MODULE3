@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
+  <a href="/display_discount?PD=aba&LP=1000&DP=10"></a>
   <form action="/display_discount" method="post">
   Products Description <input type="text" name="PD">
   List Price <input type="number" name="LP">

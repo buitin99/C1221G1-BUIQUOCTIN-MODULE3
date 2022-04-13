@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-    <h2> So tien discount ${ketqua}</h2>
-    <h2> So tien sau khi discount${ketqua1}</h2>
+    <h2> So tien discount ${ketQuaGiaGiam}</h2>
+    <h2> So tien sau khi discount${ketQuaSauCung}</h2>
 </body>
 </html>
