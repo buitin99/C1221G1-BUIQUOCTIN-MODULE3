@@ -4,29 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4212a52e-f8ce-4cc1-a98b-b2165cad870d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../customer_list/src/main/java/controller/CustomerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../customer_list/src/main/java/model/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../customer_list/src/main/webapp/list.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/bai1/src/main/webapp/converter.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../thuc_hanh/dictionary/src/main/webapp/dictionary.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/META-INF/war-tracker" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/DiscountCalculatorServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/display_discount.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/build/classes/java/main/DiscountCalculatorServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/build/classes/java/main/DiscountCalculatorServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/build/libs/product_discount_calculator-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/build/libs/product_discount_calculator-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/src/main/java/DiscountCalculatorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/src/main/java/DiscountCalculatorServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/src/main/webapp/display_discount.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/src/main/webapp/display_discount.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9_ung_dung_web/bai_tap/product_discount_calculator/src/main/webapp/index.jsp" afterDir="false" />
+    <list default="true" id="97a25a7a-d106-4bc7-856b-48424e31ba0b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../calculator_1/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator_1/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator_1/gradlew" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator_1/gradlew.bat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator_1/src/main/java/controller/CalculatorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../calculator_1/src/main/webapp/result.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/bai_tap/customer_management/src/main/java/controller/ProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/bai_tap/customer_management/src/main/java/model/Product.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/java/controller/CustomerServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/java/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/java/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/java/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/webapp/customer/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/webapp/customer/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/webapp/customer/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/webapp/customer/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/webapp/customer/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/webapp/error-404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/customer_management/src/main/webapp/index.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/build.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/settings.gradle" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/java/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/java/service/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/java/service/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/webapp/customer/create.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/webapp/customer/delete.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/webapp/customer/edit.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/webapp/customer/list.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/webapp/customer/view.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/webapp/error-404.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../s11_mcv/thuc_hanh/quan_ly_khach_hang/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/controller/CalculatorControllerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/model/Calculator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../../apache-tomcat-9.0.62/webapps/ROOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../simple_calculator/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../simple_calculator/.idea/gradle.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,14 +52,6 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="Jsp File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
@@ -56,7 +62,7 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="ProjectId" id="27jjgzxkBEr3yndbglyiNijDi6N" />
+  <component name="ProjectId" id="27lg7nkl89yjqCAXcpBUKUhzbsA" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -66,10 +72,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -83,7 +85,7 @@
         </artifact>
       </deployment>
       <server-settings>
-        <option name="BASE_DIRECTORY_NAME" value="3336ba0d-c6b0-4d23-af87-760e854b216b" />
+        <option name="BASE_DIRECTORY_NAME" value="9d7ade30-9a90-4928-a730-2aa6dc8ef089" />
       </server-settings>
       <predefined_log_file enabled="true" id="Tomcat" />
       <predefined_log_file enabled="true" id="Tomcat Catalina" />
@@ -91,7 +93,7 @@
       <predefined_log_file id="Tomcat Host Manager" />
       <predefined_log_file id="Tomcat Localhost Access" />
       <RunnerSettings RunnerId="Debug">
-        <option name="DEBUG_PORT" value="57107" />
+        <option name="DEBUG_PORT" value="54174" />
       </RunnerSettings>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
         <option name="USE_ENV_VARIABLES" value="true" />
@@ -164,14 +166,14 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="4212a52e-f8ce-4cc1-a98b-b2165cad870d" name="Changes" comment="" />
-      <created>1649840512593</created>
+      <changelist id="97a25a7a-d106-4bc7-856b-48424e31ba0b" name="Changes" comment="" />
+      <created>1649899924595</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1649840512593</updated>
-      <workItem from="1649840513832" duration="2277000" />
-      <workItem from="1649844698824" duration="170000" />
-      <workItem from="1649856210649" duration="206000" />
+      <updated>1649899924595</updated>
+      <workItem from="1649899926329" duration="278000" />
+      <workItem from="1649900245299" duration="35000" />
+      <workItem from="1649929991780" duration="48000" />
     </task>
     <servers />
   </component>
