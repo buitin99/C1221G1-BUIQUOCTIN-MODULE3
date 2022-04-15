@@ -32,4 +32,9 @@ public class ProductService implements IProductService {
         }
         return map;
     }
+
+    @Override
+    public List<Product> search(String name) {
+        return iProductRepository.search(name);
+    }
 }

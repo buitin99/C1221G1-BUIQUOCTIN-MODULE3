@@ -13,8 +13,6 @@
 </head>
 <body>
 <form method="post">
-    <label>Enter Id:</label>
-    <input type="number" name="id"><br>
     <label>Name Product</label>
     <input type="text" name="name"><br>
     <p style="color:red;">${error.get("name")}</p>

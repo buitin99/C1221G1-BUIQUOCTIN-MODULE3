@@ -13,7 +13,12 @@
 </head>
 <body>
 <button class="btn btn-primary" style="color: white"><a href="/product?action=create">Add new</a></button>
-<button class="btn btn-primary" style="color: white"><a href="/product?action=serch">Serch</a></button>
+<form action="/product">
+    <input type="hidden" name="action" value="search">
+    <label>Name Product</label>
+    <input type="text" name="name">
+    <button type="submit">Search</button>
+</form>
 <table class="table table-striped">
     <tr class="row">
         <th class="col-1">ID</th>
@@ -35,7 +40,6 @@
             <td class="col-2"><a href="/product?action=delete">Delete</a></td>
         </tr>
     </c:forEach>
-
 </table>
 </body>
 </html>

@@ -24,4 +24,15 @@ public class ProductRepository implements IProductRepository {
     public void save(Product product) {
         productList.add(product);
     }
+
+    @Override
+    public List<Product> search(String name) {
+        List<Product> productListSearch = new ArrayList<>();
+        for (Product p : this.productList) {
+            if(p.getName().contains(name)){
+                productListSearch.add(p);
+            }
+        }
+        return productListSearch;
+    }
 }
