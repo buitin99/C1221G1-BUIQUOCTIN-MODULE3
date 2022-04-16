@@ -31,13 +31,13 @@
     </tr>
     <c:forEach var="product" items="${products}" varStatus="tinbq">
         <tr class="row">
-            <td class="col-1">${product.id}</td>
+            <td class="col-1"><a href="/?action=view&id=${product.id}">${product.id}</a></td>
             <td class="col-2">${product.name}</td>
             <td class="col-2">${product.price}</td>
             <td class="col-3">${product.describe}</td>
             <td class="col-2">${product.produce}</td>
-            <td class="col-1"><a href="/edit.jsp">edit</a></td>
-            <td class="col-2"><a href="#">Delete</a></td>
+            <td class="col-1"><a href="?action=edit&id=${product.id}">edit</a></td>
+            <td class="col-2"><a href="?action=delete&id=${product.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

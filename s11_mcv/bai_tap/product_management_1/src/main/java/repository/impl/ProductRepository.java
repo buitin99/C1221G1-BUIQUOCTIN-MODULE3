@@ -3,6 +3,8 @@ package repository.impl;
 import model.Product;
 import repository.IProductRepository;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,4 +47,10 @@ public class ProductRepository implements IProductRepository {
     public void edit(int id, Product product) {
         productList.add(id,product);
     }
+
+    @Override
+    public void remove(int id) {
+        productList.remove(id);
+    }
+
 }
