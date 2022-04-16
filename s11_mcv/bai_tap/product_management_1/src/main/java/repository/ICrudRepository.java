@@ -7,4 +7,5 @@ public interface ICrudRepository<E> {
     List<E> getList();
     void save(E e);
     List<E> search(String name);
+    void edit(int id, E e);
 }

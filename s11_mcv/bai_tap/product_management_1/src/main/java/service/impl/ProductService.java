@@ -37,4 +37,15 @@ public class ProductService implements IProductService {
     public List<Product> search(String name) {
         return iProductRepository.search(name);
     }
+
+    @Override
+    public Product findById(int id) {
+        Product product = iProductRepository.findById(id);
+        return product;
+    }
+
+    @Override
+    public void edit(int id, Product product) {
+        iProductRepository.edit(id,product);
+    }
 }

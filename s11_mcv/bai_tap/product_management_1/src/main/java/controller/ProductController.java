@@ -62,29 +62,32 @@ public class ProductController extends HttpServlet {
     }
 
     private void editProduct(HttpServletRequest request, HttpServletResponse response) {
-        Integer id = (int) (Math.random() * 1000);
+        Integer id = Integer.parseInt(request.getParameter("id"));
         String name = request.getParameter("name");
         Double price = Double.valueOf(request.getParameter("price"));
         String describe = request.getParameter("describe");
         String produce = request.getParameter("produce");
-        
-        Product product = new Product(id, name, price, describe, produce);
-        Map<String, String> map = iProductService.save(product);
-        if (map.isEmpty()) {
-            try {
-                response.sendRedirect("/product");
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        } else {
-            request.setAttribute("error", map);
-            try {
-                request.getRequestDispatcher("edit.jsp").forward(request, response);
-            } catch (ServletException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        Product product = iProductService.findById(id);
+        RequestDispatcher dispatcher;
+        if (product == null){
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        }else{
+            product.setId(id);
+            product.setName(name);
+            product.setPrice(price);
+            product.setDescribe(describe);
+            product.setProduce(produce);
+            iProductService.edit(id,product);
+            request.setAttribute("product",product);
+            request.setAttribute("message","Product information was updated");
+            dispatcher =request.getRequestDispatcher("product/edit.jsp");
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -113,21 +116,44 @@ public class ProductController extends HttpServlet {
         switch (action) {
             case "create": {
                 request.getRequestDispatcher("create.jsp").forward(request, response);
+                break;
             }
             case "edit": {
-                request.getRequestDispatcher("edit.jsp").forward(request, response);
+                showEditForm(request,response);
+                break;
             }
             case "delete": {
                 request.getRequestDispatcher("delete.jsp").forward(request, response);
+                break;
             }
             case "search": {
                 String name = request.getParameter("name");
                 List<Product> productList = iProductService.search(name);
                 request.setAttribute("products", productList);
                 request.getRequestDispatcher("list.jsp").forward(request, response);
+                break;
             }
             default:
                 showList(request, response);
+        }
+    }
+
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Product product = this.iProductService.findById(id);
+        RequestDispatcher dispatcher;
+        if (product == null){
+            dispatcher = request.getRequestDispatcher("error-404.jsp");
+        }else{
+            request.setAttribute("product",product);
+            dispatcher = request.getRequestDispatcher("product/edit.jsp");
+        }
+        try {
+            dispatcher.forward(request, response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -142,4 +168,5 @@ public class ProductController extends HttpServlet {
             e.printStackTrace();
         }
     }
+
 }

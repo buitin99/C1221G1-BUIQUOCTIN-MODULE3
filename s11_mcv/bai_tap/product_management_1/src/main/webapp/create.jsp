@@ -12,6 +12,15 @@
     <title>Title</title>
 </head>
 <body>
+<h1>Create new product</h1>
+<p>
+    <c:if test='${requestScope["message"] != null}'>
+        <span class="message">${requestScope["message"]}</span>
+    </c:if>
+</p>
+<p>
+    <a href="/list.jsp">Back to customer list</a>
+</p>
 <form method="post">
     <label>Name Product</label>
     <input type="text" name="name"><br>

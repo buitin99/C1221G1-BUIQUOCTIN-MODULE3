@@ -35,4 +35,14 @@ public class ProductRepository implements IProductRepository {
         }
         return productListSearch;
     }
+
+    @Override
+    public Product findById(int id) {
+        return productList.get(id);
+    }
+
+    @Override
+    public void edit(int id, Product product) {
+        productList.add(id,product);
+    }
 }
