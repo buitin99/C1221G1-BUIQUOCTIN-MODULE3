@@ -36,7 +36,7 @@
             <td class="col-2">${product.price}</td>
             <td class="col-3">${product.describe}</td>
             <td class="col-2">${product.produce}</td>
-            <td class="col-1"><a href="?action=edit&id=${product.id}">edit</a></td>
+            <td class="col-1"><a href="/product?action=edit&id=${product.id}">edit</a></td>
             <td class="col-2"><a href="?action=delete&id=${product.id}">Delete</a></td>
         </tr>
     </c:forEach>

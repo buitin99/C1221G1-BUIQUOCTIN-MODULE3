@@ -11,9 +11,11 @@ public interface IProductService {
     Map<String, String> save(Product product);
     List<Product> search(String name);
     Product findById(int id);
-    void edit(int id, Product product);
-    void updateProduct(HttpServletRequest request, HttpServletResponse response);
-    void editProduct(HttpServletRequest request, HttpServletResponse response);
+//    void edit(int id, Product product);
+//    void updateProduct(HttpServletRequest request, HttpServletResponse response);
+//    void editProduct(HttpServletRequest request, HttpServletResponse response);
     void showDeleteForm(HttpServletRequest request, HttpServletResponse response);
     void deleteProduct(HttpServletRequest request, HttpServletResponse response);
+    void showEditForm(HttpServletRequest request, HttpServletResponse response);
+    void updateProducts(HttpServletRequest request, HttpServletResponse response);
 }

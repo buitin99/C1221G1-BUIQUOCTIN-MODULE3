@@ -35,7 +35,7 @@ public class ProductController extends HttpServlet {
                 break;
             }
             case "edit": {
-                iProductService.editProduct(request,response);
+                iProductService.updateProducts(request,response);
                 break;
             }
             case "delete": {
@@ -74,7 +74,7 @@ public class ProductController extends HttpServlet {
                 break;
             }
             case "edit": {
-                iProductService.updateProduct(request,response);
+                iProductService.showEditForm(request,response);
                 break;
             }
             case "delete": {

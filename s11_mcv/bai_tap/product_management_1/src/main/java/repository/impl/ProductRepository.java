@@ -44,6 +44,11 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
+    public void update(int id, Product product) {
+        productList.add(id,product);
+    }
+
+    @Override
     public void edit(int id, Product product) {
         productList.add(id,product);
     }
