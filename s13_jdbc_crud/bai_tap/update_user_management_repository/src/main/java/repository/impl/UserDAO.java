@@ -6,6 +6,7 @@ import repository.IUserDAO;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class UserDAO implements IUserDAO {
@@ -127,9 +128,33 @@ public class UserDAO implements IUserDAO {
     }
 
     @Override
-    public void sortByName() {
-
+    public List<User> sortByName() {
+        List<User> userList = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = this.baseService.getConnectionJavaToDB().prepareStatement("select id,`name`,email,country from users order by name");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            User user;
+            while (resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCountry(resultSet.getString("country"));
+                userList.add(user);
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
+        return userList;
     }
+
 
     private void printSQLException(SQLException ex) {
         for (Throwable e : ex) {

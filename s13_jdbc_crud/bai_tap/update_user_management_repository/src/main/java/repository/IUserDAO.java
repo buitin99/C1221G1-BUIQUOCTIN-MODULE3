@@ -15,5 +15,5 @@ public interface IUserDAO extends ICrudRepository{
     boolean deleteUser(int id) throws SQLException;
 
     boolean updateUser(User user) throws SQLException;
-    void sortByName();
+    List<User> sortByName();
 }

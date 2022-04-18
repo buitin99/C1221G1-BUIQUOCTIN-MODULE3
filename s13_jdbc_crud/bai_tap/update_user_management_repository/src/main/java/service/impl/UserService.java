@@ -40,4 +40,9 @@ public class UserService implements IUserService {
     public List<User> search(String country) {
         return userDAO.search(country);
     }
+
+    @Override
+    public List<User> sort() {
+        return userDAO.sortByName();
+    }
 }

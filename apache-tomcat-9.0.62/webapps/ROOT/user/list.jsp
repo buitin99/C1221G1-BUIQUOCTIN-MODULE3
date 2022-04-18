@@ -7,11 +7,12 @@
 </head>
 <body>
 <center>
-    <h1>User Management</h1>
+    <h1><a href="/users?action=list">User Management</a></h1>
     <h2>
         <a href="/users?action=create">Add New User</a>
     </h2>
 </center>
+
 <form method="get">
     <input type="hidden" name="action" value="search">
     <input type="text" name="country">
@@ -22,7 +23,10 @@
         <caption><h2>List of Users</h2></caption>
         <tr>
             <th>ID</th>
-            <th>Name</th>
+            <th>Name<form method="get">
+                <input type="hidden" name="action" value="sort">
+                <button type="submit">Sort</button>
+            </form></th>
             <th>Email</th>
             <th>Country</th>
             <th>Actions</th>

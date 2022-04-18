@@ -21,12 +21,12 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "UserServlet", urlPatterns = "/users")
 public class UserServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
-    private UserDAO userDAO;
+//    private UserDAO userDAO;
     private UserService userService = new UserService();
 
-    public void init() {
-        userDAO = new UserDAO();
-    }
+//    public void init() {
+//        userDAO = new UserDAO();
+//    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -68,6 +68,9 @@ public class UserServlet extends HttpServlet {
                 case "search":
                     search(request,response);
                     break;
+                case "sort":
+                    sort(request,response);
+                    break;
                 default:
                     listUser(request, response);
                     break;
@@ -80,12 +83,6 @@ public class UserServlet extends HttpServlet {
     private void listUser(HttpServletRequest request, HttpServletResponse response)
         throws SQLException, IOException, ServletException {
         List<User> listUser = userService.selectAllUsers();
-        Collections.sort(listUser, new Comparator<User>() {
-            @Override
-            public int compare(User o1, User o2) {
-                return o1.getCountry().compareTo(o2.getCountry());
-            }
-        });
         request.setAttribute("listUser", listUser);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(request, response);
@@ -145,6 +142,13 @@ public class UserServlet extends HttpServlet {
         String country = request.getParameter("country");
         List<User> result = userService.search(country);
         request.setAttribute("listUser", result);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
+        dispatcher.forward(request, response);
+    }
+    private void sort(HttpServletRequest request, HttpServletResponse response)
+            throws SQLException, IOException, ServletException {
+        List<User> resultSort = userService.sort();
+        request.setAttribute("listUser",resultSort);
         RequestDispatcher dispatcher = request.getRequestDispatcher("user/list.jsp");
         dispatcher.forward(request, response);
     }
