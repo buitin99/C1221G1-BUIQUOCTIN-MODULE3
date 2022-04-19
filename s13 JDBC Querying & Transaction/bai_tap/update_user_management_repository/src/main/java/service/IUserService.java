@@ -13,7 +13,4 @@ public interface IUserService {
     boolean updateUser(User user) throws SQLException;
     List<User> search(String country);
     List<User> sort();
-    User getUserById(int id);
-
-    void insertUserStore(User user) throws SQLException;
 }

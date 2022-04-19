@@ -45,16 +45,4 @@ public class UserService implements IUserService {
     public List<User> sort() {
         return userDAO.sortByName();
     }
-
-    @Override
-    public User getUserById(int id) {
-        return userDAO.getUserById(id);
-    }
-
-    @Override
-    public void insertUserStore(User user) throws SQLException {
-        userDAO.insertUserStore(user);
-    }
-
-
 }

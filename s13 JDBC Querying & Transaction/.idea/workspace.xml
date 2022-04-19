@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00a811cf-9594-4293-94d3-d6fb63b2f818" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../casestudy_servletjsp/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/controller/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/model/CustomerType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/repository/ICustomerTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/repository/impl/CustomerTypeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/service/ICustomeTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/service/impl/CustomerTypeImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/webapp/views/customer/create.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/controller/FuramaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/ICrudRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/ICrudRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/ICustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/ICustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/impl/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/impl/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/service/ICustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/service/ICustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/service/impl/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/service/impl/CustomerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/furama/customer.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../apache-tomcat-9.0.62/webapps/ROOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/controller/FuramaController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/model/Customer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/model/Customer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/repository/ICrudRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/repository/ICrudRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/repository/ICustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/repository/ICustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/repository/impl/CustomerRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/repository/impl/CustomerRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/service/ICustomerService.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/service/ICustomerService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/service/impl/CustomerServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/build/classes/java/main/service/impl/CustomerServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/libs/casestudy_servletjsp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/build/libs/casestudy_servletjsp-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/controller/FuramaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/model/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/model/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/repository/ICrudRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/repository/ICrudRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/repository/ICustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/repository/ICustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/repository/impl/CustomerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/repository/impl/CustomerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/service/impl/CustomerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/java/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/webapp/furama/customer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/webapp/views/customer/list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../casestudy_servletjsp/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/update_user_management_repository/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/update_user_management_repository/.idea/update_user_management_repository.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/controller/UserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/controller/UserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/repository/IUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/repository/IUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/repository/impl/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/repository/impl/UserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/service/impl/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/bai_tap/update_user_management_repository/src/main/java/service/impl/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/7.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/classes/java/main/controller/UserServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/classes/java/main/dto/UserListDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/classes/java/main/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/classes/java/main/service/BaseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/classes/java/main/service/IUserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/classes/java/main/service/impl/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/libs/update_user_management-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/java/controller/UserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/java/dto/UserListDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/java/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/java/service/BaseRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/java/service/IUserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/java/service/impl/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/webapp/user/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/webapp/user/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management/src/main/webapp/user/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/7.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/classes/java/main/controller/UserServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/classes/java/main/dto/UserListDTO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/classes/java/main/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/classes/java/main/service/BaseService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/classes/java/main/service/ICrud.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/classes/java/main/service/IUserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/classes/java/main/service/impl/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/libs/update_user_management_1-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/java/controller/UserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/java/dto/UserListDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/java/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/java/service/BaseService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/java/service/ICrud.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/java/service/IUserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/java/service/impl/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/webapp/user/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/webapp/user/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_1/src/main/webapp/user/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/7.1/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/7.1/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/7.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/7.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/classes/java/main/controller/UserServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/classes/java/main/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/classes/java/main/repository/BaseRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/classes/java/main/repository/ICrudRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/classes/java/main/repository/IUserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/classes/java/main/repository/impl/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/classes/java/main/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/classes/java/main/service/impl/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/libs/update_user_management_repository-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/build/tmp/war/MANIFEST.MF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/java/controller/UserServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/java/model/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/java/repository/BaseRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/java/repository/ICrudRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/java/repository/IUserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/java/repository/impl/UserDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/java/service/IUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/java/service/impl/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/webapp/user/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/webapp/user/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../s13_jdbc_crud/bai_tap/update_user_management_repository/src/main/webapp/user/list.jsp" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="281CyPL16yKCvPcqVIGd49tsXNO" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/bai_tap/update_user_management_repository" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.62" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.62" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="7e32afa5-5d08-4f32-996e-9a96e25c2ff6" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="53910" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00a811cf-9594-4293-94d3-d6fb63b2f818" name="Changes" comment="" />
+      <created>1650374959360</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650374959360</updated>
+      <workItem from="1650374960632" duration="345000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

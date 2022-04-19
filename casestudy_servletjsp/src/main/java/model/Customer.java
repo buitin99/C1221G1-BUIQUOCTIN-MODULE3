@@ -6,9 +6,9 @@ public class Customer{
     private Integer id;
     private Integer customerTypeId;
     private String name;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private Integer gender;
-    private String id_card;
+    private String idCard;
     private String phone;
     private String email;
     private String address;
@@ -16,13 +16,24 @@ public class Customer{
     public Customer() {
     }
 
-    public Customer(Integer id, Integer customerTypeId, String name, Date dateOfBirth, Integer gender, String id_card, String phone, String email, String address) {
+    public Customer(Integer id, Integer customerTypeId, String name, String dateOfBirth, Integer gender, String id_card, String phone, String email, String address) {
         this.id = id;
         this.customerTypeId = customerTypeId;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
-        this.id_card = id_card;
+        this.idCard = id_card;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+    }
+
+    public Customer(Integer customerTypeId, String name, String dateOfBirth, Integer gender, String idCard, String phone, String email, String address) {
+        this.customerTypeId = customerTypeId;
+        this.name = name;
+        this.dateOfBirth = dateOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
         this.phone = phone;
         this.email = email;
         this.address = address;
@@ -52,11 +63,11 @@ public class Customer{
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -68,12 +79,12 @@ public class Customer{
         this.gender = gender;
     }
 
-    public String getId_card() {
-        return id_card;
+    public String getIdCard() {
+        return idCard;
     }
 
-    public void setId_card(String id_card) {
-        this.id_card = id_card;
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
     }
 
     public String getPhone() {
