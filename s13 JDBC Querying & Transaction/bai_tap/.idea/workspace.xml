@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a3968439-d9b1-45e7-a9a0-4d902fc7a324" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/model/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/repository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/repository/ICrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/repository/IEmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/repository/impl/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/repository/impl/EmployeeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/service/IEmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/service/impl/CustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/service/impl/EmployeeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/webapp/furama/customer.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/webapp/furama/employee.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/webapp/furama/home.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/controller/FuramaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/model/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/model/Employee.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/repository/BaseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/repository/ICrudRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/repository/ICustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/repository/impl/CustomerRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/service/ICustomerService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/java/service/impl/CustomerServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../casestudy_servletjsp/src/main/webapp/furama/customer.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/controller/UserServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/model/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/BaseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/BaseRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/ICrudRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/ICrudRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/IUserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/repository/impl/UserDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/WEB-INF/classes/service/impl/UserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/user/create.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/user/edit.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../apache-tomcat-9.0.62/webapps/ROOT/user/list.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/build/classes/java/main/controller/FuramaController.class" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/build/classes/java/main/controller/FuramaController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/build/libs/case_study_servlet_jsp-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/build/libs/case_study_servlet_jsp-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/controller/FuramaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/java/controller/FuramaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/../../case_study_servlet_jsp/src/main/webapp/index.jsp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="27zzhYNCVFd1MYWqe8eeXFPbPdy" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/update_user_management_repository" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a3968439-d9b1-45e7-a9a0-4d902fc7a324" name="Changes" comment="" />
+      <created>1650337822425</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650337822425</updated>
+      <workItem from="1650337823550" duration="50000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
