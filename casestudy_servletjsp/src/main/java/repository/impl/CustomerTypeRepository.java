@@ -40,4 +40,9 @@ public class CustomerTypeRepository implements ICustomerTypeRepository {
         }
         return customerTypeList;
     }
+
+    @Override
+    public void updateCustomer(Customer customer) {
+
+    }
 }

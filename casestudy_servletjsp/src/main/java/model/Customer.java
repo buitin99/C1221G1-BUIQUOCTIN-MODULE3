@@ -16,28 +16,28 @@ public class Customer{
     public Customer() {
     }
 
-    public Customer(Integer id, Integer customerTypeId, String name, String dateOfBirth, Integer gender, String id_card, String phone, String email, String address) {
+    public Customer(Integer id, Integer customerTypeId, String name, String dateOfBirth, Integer gender, String phone,String email, String address, String id_card) {
         this.id = id;
         this.customerTypeId = customerTypeId;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
         this.gender = gender;
-        this.idCard = id_card;
         this.phone = phone;
         this.email = email;
         this.address = address;
+        this.idCard = id_card;
     }
 
-    public Customer(Integer customerTypeId, String name, String dateOfBirth, Integer gender, String idCard, String phone, String email, String address) {
-        this.customerTypeId = customerTypeId;
-        this.name = name;
-        this.dateOfBirth = dateOfBirth;
-        this.gender = gender;
-        this.idCard = idCard;
-        this.phone = phone;
-        this.email = email;
-        this.address = address;
-    }
+//    public Customer(Integer customerTypeId, String name, String dateOfBirth, Integer gender, String phone, String email, String address ,String idCard) {
+//        this.customerTypeId = customerTypeId;
+//        this.name = name;
+//        this.dateOfBirth = dateOfBirth;
+//        this.gender = gender;
+//        this.idCard = idCard;
+//        this.phone = phone;
+//        this.email = email;
+//        this.address = address;
+//    }
 
     public Integer getId() {
         return id;

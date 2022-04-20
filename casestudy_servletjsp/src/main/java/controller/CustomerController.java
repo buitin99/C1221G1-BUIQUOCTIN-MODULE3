@@ -2,15 +2,20 @@ package controller;
 
 import model.Customer;
 import model.CustomerType;
+import model.Service;
 import service.ICustomeTypeService;
 import service.ICustomerService;
+import service.IService;
 import service.impl.CustomerServiceImpl;
 import service.impl.CustomerTypeImpl;
+import service.impl.ServiceImpl;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.Serializable;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
 
@@ -18,6 +23,7 @@ import java.util.Map;
 public class CustomerController extends HttpServlet {
     private ICustomerService iCustomerService = new CustomerServiceImpl();
     private ICustomeTypeService iCustomeTypeService = new CustomerTypeImpl();
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
@@ -38,15 +44,32 @@ public class CustomerController extends HttpServlet {
                 request.setAttribute("customerTypeList",customerTypeList);
                 request.getRequestDispatcher("/views/customer/list.jsp").forward(request,response);
                 break;
+            case "edit":
+                showEditForm(request,response);
+                break;
             default:
                 listCustomer(request,response);
+        }
+    }
+
+    private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
+        Integer id = Integer.parseInt(request.getParameter("id"));
+        Customer customer = iCustomerService.findById(id);
+        request.setAttribute("customer",customer);
+        List<CustomerType> customerTypeList = iCustomeTypeService.getListCustomerType();
+        request.setAttribute("customerTypeList",customerTypeList);
+        try {
+            request.getRequestDispatcher("views/customer/edit.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
     private void showCreateForm(HttpServletRequest request, HttpServletResponse response) {
         List<CustomerType> customerTypeList = iCustomeTypeService.getListCustomerType();
         request.setAttribute("customerTypeList",customerTypeList);
-
         RequestDispatcher dispatcher = request.getRequestDispatcher("views/customer/create.jsp");
         try {
             dispatcher.forward(request,response);
@@ -86,13 +109,37 @@ public class CustomerController extends HttpServlet {
                 createCustomer(request, response);
                 break;
             case "edit":
+                updateCustomer(request,response);
                 break;
             case "delete":
                 break;
             default:
+                updateCustomer(request,response);
                 break;
         }
     }
+
+    private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
+        int id = Integer.parseInt(request.getParameter("id"));
+        Integer customerTypeId = Integer.valueOf(request.getParameter("customerType"));
+        String customerName = request.getParameter("name");
+        String customerBirthday = request.getParameter("birthday");
+        Integer customerGender = Integer.valueOf(request.getParameter("gender"));
+        String customerIdCard = request.getParameter("idCard");
+        String customerPhone = request.getParameter("phone");
+        String customerEmail = request.getParameter("email");
+        String customerAddress = request.getParameter("address");
+        Customer customerUpdate = new Customer(id, customerTypeId, customerName, customerBirthday, customerGender,
+                customerIdCard, customerPhone, customerEmail, customerAddress);
+        System.out.println(customerUpdate);
+        iCustomerService.updateCustomer(customerUpdate);
+        try {
+            response.sendRedirect("/customer");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
     private void createCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         Integer idType = Integer.parseInt(request.getParameter("customerType"));

@@ -27,7 +27,26 @@ public class CustomerServiceImpl implements ICustomerService {
     }
 
     @Override
+    public Customer findById(Integer id) {
+        Customer customer = iCustomerRepository.findById(id);
+        return customer;
+    }
+
+    @Override
     public List<Customer> search(String name, String phone, String typeId) {
         return iCustomerRepository.search(name,phone,typeId);
     }
+
+    @Override
+    public void updateCustomer(Customer customer) {
+        iCustomerRepository.updateCustomer(customer);
+    }
+
+
+
+    @Override
+    public List getList() {
+        return null;
+    }
+
 }

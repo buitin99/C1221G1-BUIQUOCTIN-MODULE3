@@ -27,7 +27,7 @@
         <li class="col-2"><a href="#">Home</a></li>
         <li class="col-2"><a href="#">Employee</a></li>
         <li class="col-2"><a href="/customer?action=customer">Customer</a></li>
-        <li class="col-2"><a href="#">Service</a></li>
+        <li class="col-2"><a href="/service?action=service">Service</a></li>
         <li class="col-2"><a href="#">Contract</a></li>
       </ul>
     </div>
