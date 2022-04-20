@@ -4,7 +4,9 @@ import model.User;
 import repository.BaseRepository;
 import repository.IUserDAO;
 
+import java.math.BigDecimal;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,6 +23,15 @@ public class UserDAO implements IUserDAO {
     private static final String SELECT_ALL_USERS = "select * from users";
     private static final String DELETE_USERS_SQL = "delete from users where id = ?;";
     private static final String UPDATE_USERS_SQL = "update users set name = ?,email= ?, country =? where id = ?;";
+    private static final String FIND_USER_BY_COUNTRY_SQL = "SELECT * FROM users WHERE country LIKE ?;";
+    private static final String SORT_USER_BY_NAME_SQL = "SELECT * FROM users ORDER BY name ";
+    private static final String SORT_USER_BY_EMAIL_SQL = "SELECT * FROM users ORDER BY email ";
+    private static final String SORT_USER_BY_COUNTRY_SQL = "SELECT * FROM users ORDER BY country ";
+    private static final String SQL_INSERT = "INSERT INTO EMPLOYEE (NAME, SALARY, CREATED_DATE) VALUES (?,?,?)";
+    private static final String SQL_UPDATE = "UPDATE EMPLOYEE SET SALARY=? WHERE NAME=?";
+    private static final String SQL_TABLE_CREATE = "CREATE TABLE EMPLOYEE";
+    private static final String SQL_TABLE_DROP = "DROP TABLE IF EXISTS EMPLOYEE";
+
 
     public UserDAO() {
     }
@@ -153,6 +164,217 @@ public class UserDAO implements IUserDAO {
             }
         }
         return userList;
+    }
+
+    @Override
+    public void addUserTransaction(User user, int[] permision) {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        PreparedStatement pstmtAssignment = null;
+        ResultSet rs = null;
+        try {
+            conn = getConnection();
+            conn.setAutoCommit(false);
+            pstmt = conn.prepareStatement(INSERT_USERS_SQL, Statement.RETURN_GENERATED_KEYS);
+            pstmt.setString(1, user.getName());
+            pstmt.setString(2, user.getEmail());
+            pstmt.setString(3, user.getCountry());
+            int rowAffected = pstmt.executeUpdate();
+            rs = pstmt.getGeneratedKeys();
+            int userId = 0;
+            if (rs.next()) {
+                userId = rs.getInt(1);
+            }
+            if (rowAffected == 1) {
+                String sqlPivot = "INSERT INTO user_permision(user_id,permision_id) "
+                        + "VALUES(?,?)";
+                pstmtAssignment = conn.prepareStatement(sqlPivot);
+                for (int permisionId : permision) {
+                    pstmtAssignment.setInt(1, userId);
+                    pstmtAssignment.setInt(2, permisionId);
+                    pstmtAssignment.executeUpdate();
+                }
+                conn.commit();
+            } else {
+                conn.rollback();
+            }
+        } catch (SQLException ex) {
+            // roll back the transaction
+            try {
+                if (conn != null) {
+                    conn.rollback();
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+            System.out.println(ex.getMessage());
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (pstmtAssignment != null) {
+                    pstmtAssignment.close();
+                }
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (SQLException e) {
+                System.out.println(e.getMessage());
+            }
+        }
+    }
+
+    @Override
+    public void insertUpdateWithoutTransaction() {
+
+        try (Connection conn = getConnection();
+
+             Statement statement = conn.createStatement();
+
+             PreparedStatement psInsert = conn.prepareStatement(SQL_INSERT);
+
+             PreparedStatement psUpdate = conn.prepareStatement(SQL_UPDATE)) {
+
+
+
+            statement.execute(SQL_TABLE_DROP);
+
+            statement.execute(SQL_TABLE_CREATE);
+
+
+
+            // Run list of insert commands
+
+            psInsert.setString(1, "Quynh");
+
+            psInsert.setBigDecimal(2, new BigDecimal(10));
+
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+
+            psInsert.execute();
+
+
+
+            psInsert.setString(1, "Ngan");
+
+            psInsert.setBigDecimal(2, new BigDecimal(20));
+
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+
+            psInsert.execute();
+
+
+
+            // Run list of update commands
+
+
+
+            // below line caused error, test transaction
+
+            // org.postgresql.util.PSQLException: No value specified for parameter 1.
+
+            psUpdate.setBigDecimal(2, new BigDecimal(999.99));
+
+
+
+            //psUpdate.setBigDecimal(1, new BigDecimal(999.99));
+
+            psUpdate.setString(2, "Quynh");
+
+            psUpdate.execute();
+
+
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+
+        }
+
+    }
+
+    @Override
+    public void insertUpdateUseTransaction() {
+        try (Connection conn = getConnection();
+
+             Statement statement = conn.createStatement();
+
+             PreparedStatement psInsert = conn.prepareStatement(SQL_INSERT);
+
+             PreparedStatement psUpdate = conn.prepareStatement(SQL_UPDATE)) {
+
+            statement.execute(SQL_TABLE_DROP);
+
+            statement.execute(SQL_TABLE_CREATE);
+
+            // start transaction block
+
+            conn.setAutoCommit(false); // default true
+
+            // Run list of insert commands
+
+            psInsert.setString(1, "Quynh");
+
+            psInsert.setBigDecimal(2, new BigDecimal(10));
+
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+
+            psInsert.execute();
+
+
+
+            psInsert.setString(1, "Ngan");
+
+            psInsert.setBigDecimal(2, new BigDecimal(20));
+
+            psInsert.setTimestamp(3, Timestamp.valueOf(LocalDateTime.now()));
+
+            psInsert.execute();
+
+
+
+            // Run list of update commands
+
+
+
+            // below line caused error, test transaction
+
+            // org.postgresql.util.PSQLException: No value specified for parameter 1.
+
+            psUpdate.setBigDecimal(2, new BigDecimal(999.99));
+
+
+
+            //psUpdate.setBigDecimal(1, new BigDecimal(999.99));
+
+            psUpdate.setString(2, "Quynh");
+
+            psUpdate.execute();
+
+
+
+            // end transaction block, commit changes
+
+            conn.commit();
+
+            // good practice to set it back to default true
+
+            conn.setAutoCommit(true);
+
+
+
+        } catch (Exception e) {
+
+            System.out.println(e.getMessage());
+
+            e.printStackTrace();
+
+        }
+
     }
 
 

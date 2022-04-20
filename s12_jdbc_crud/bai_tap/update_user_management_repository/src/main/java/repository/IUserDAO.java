@@ -16,4 +16,9 @@ public interface IUserDAO extends ICrudRepository{
 
     boolean updateUser(User user) throws SQLException;
     List<User> sortByName();
+
+    void addUserTransaction(User user, int[] permision);
+
+    void insertUpdateWithoutTransaction();
+    void insertUpdateUseTransaction();
 }
