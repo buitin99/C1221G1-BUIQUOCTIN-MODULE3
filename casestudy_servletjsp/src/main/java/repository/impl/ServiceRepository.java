@@ -29,6 +29,7 @@ public class ServiceRepository implements IServiceRepository {
             preparedStatement.setString(8, service.getDescribe());
             preparedStatement.setDouble(9, service.getAreaPool());
             preparedStatement.setInt(10, service.getFloor());
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
