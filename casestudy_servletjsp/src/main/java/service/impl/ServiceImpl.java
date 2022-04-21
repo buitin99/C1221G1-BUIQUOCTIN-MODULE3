@@ -14,14 +14,15 @@ public class ServiceImpl implements IService {
 
     @Override
     public List getList() {
-        return null;
+        List<Service> serviceList = iserviceRepository.getList();
+        return serviceList;
     }
 
     @Override
     public Map<String, String> save(Service service) {
         Map<String,String> map = new HashMap<>();
         iserviceRepository.save(service);
-        return null;
+        return map;
     }
 
     @Override
