@@ -55,11 +55,12 @@ public class CustomerController extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response) {
         Integer id = Integer.parseInt(request.getParameter("id"));
         Customer customer = iCustomerService.findById(id);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("/views/customer/edit.jsp");
         request.setAttribute("customer",customer);
         List<CustomerType> customerTypeList = iCustomeTypeService.getListCustomerType();
         request.setAttribute("customerTypeList",customerTypeList);
         try {
-            request.getRequestDispatcher("views/customer/edit.jsp").forward(request,response);
+           dispatcher.forward(request,response);
         } catch (ServletException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -97,7 +98,6 @@ public class CustomerController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
         response.setContentType("text/html; charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         String action = request.getParameter("action");
@@ -112,29 +112,38 @@ public class CustomerController extends HttpServlet {
                 updateCustomer(request,response);
                 break;
             case "delete":
+                deleteCustomer(request,response);
                 break;
             default:
-                updateCustomer(request,response);
                 break;
         }
+    }
+
+    private void deleteCustomer(HttpServletRequest request, HttpServletResponse response) throws IOException{
+        Integer id = Integer.parseInt(request.getParameter("id"));
+        iCustomerService.deleteCustomer(id);
+        response.sendRedirect("/customer");
     }
 
     private void updateCustomer(HttpServletRequest request, HttpServletResponse response) {
         int id = Integer.parseInt(request.getParameter("id"));
         Integer customerTypeId = Integer.valueOf(request.getParameter("customerType"));
         String customerName = request.getParameter("name");
-        String customerBirthday = request.getParameter("birthday");
+        String customerBirthday = request.getParameter("dateOfBirth");
         Integer customerGender = Integer.valueOf(request.getParameter("gender"));
-        String customerIdCard = request.getParameter("idCard");
         String customerPhone = request.getParameter("phone");
         String customerEmail = request.getParameter("email");
         String customerAddress = request.getParameter("address");
-        Customer customerUpdate = new Customer(id, customerTypeId, customerName, customerBirthday, customerGender,
-                customerIdCard, customerPhone, customerEmail, customerAddress);
-        System.out.println(customerUpdate);
+        String customerIdCard = request.getParameter("idCard");
+        Customer customerUpdate = new Customer(id, customerTypeId, customerName, customerBirthday, customerGender
+                , customerPhone, customerEmail,  customerIdCard, customerAddress);
+        RequestDispatcher dispatcher;
         iCustomerService.updateCustomer(customerUpdate);
+        dispatcher = request.getRequestDispatcher("/views/customer/edit.jsp");
         try {
-            response.sendRedirect("/customer");
+            dispatcher.forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

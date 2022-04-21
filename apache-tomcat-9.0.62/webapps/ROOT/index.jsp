@@ -16,7 +16,7 @@
   <div class="col-4"></div>
   <div class="col-4"></div>
   <div class="col-4">
-    <p style="float: right; text-align: center">Bùi Quốc Tín</p>
+    <p style="float: right; text-align: center">[C1221-G1]Bùi Quốc Tín</p>
   </div>
 </div>
 <hr>
@@ -26,7 +26,7 @@
       <ul class="row" style="list-style-type: none">
         <li class="col-2"><a href="#">Home</a></li>
         <li class="col-2"><a href="#">Employee</a></li>
-        <li class="col-2"><a href="/customer?action=customer">Customer</a></li>
+        <li class="col-2"><a href="/customer?action=list">Customer</a></li>
         <li class="col-2"><a href="/service?action=service">Service</a></li>
         <li class="col-2"><a href="#">Contract</a></li>
       </ul>

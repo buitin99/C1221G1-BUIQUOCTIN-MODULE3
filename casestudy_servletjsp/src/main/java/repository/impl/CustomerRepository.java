@@ -4,10 +4,7 @@ import model.Customer;
 import repository.BaseRepository;
 import repository.ICustomerRepository;
 
-import java.sql.CallableStatement;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +28,7 @@ public class CustomerRepository implements ICustomerRepository {
                 String phone = resultSet.getString("so_dien_thoai");
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("dia_chi");
-                customerList.add(new Customer(id, idType, name, dateOfBirth, gender, id_card, phone, email, address));
+                customerList.add(new Customer(id, idType, name, dateOfBirth, gender, phone,email,address,id_card));
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -55,10 +52,10 @@ public class CustomerRepository implements ICustomerRepository {
             preparedStatement.setString(2, customer.getName());
             preparedStatement.setString(3, customer.getDateOfBirth());
             preparedStatement.setInt(4, customer.getGender());
-            preparedStatement.setString(5, customer.getIdCard());
-            preparedStatement.setString(6, customer.getPhone());
-            preparedStatement.setString(7, customer.getEmail());
-            preparedStatement.setString(8, customer.getAddress());
+            preparedStatement.setString(5, customer.getPhone());
+            preparedStatement.setString(6, customer.getEmail());
+            preparedStatement.setString(7, customer.getAddress());
+            preparedStatement.setString(8, customer.getIdCard());
             preparedStatement.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
@@ -76,21 +73,22 @@ public class CustomerRepository implements ICustomerRepository {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = this.baseRepository.getConnectionJavaToDB().prepareStatement
-                    ("update khach_hang set ma_loai_khach = ?, ho_va_ten = ? , ngay_sinh = ? , gioi_tinh = ?, so_cmnd = ?, so_dien_thoai = ? , email = ? , dia_chi = ? where ma_khach_hang = ?");
+                    ("update khach_hang set ma_loai_khach = ?, ho_va_ten = ? , ngay_sinh = ? , gioi_tinh = ?, so_dien_thoai = ?, email = ? , dia_chi = ? , so_cmnd = ? where ma_khach_hang = ?;");
             preparedStatement.setInt(1, customer.getCustomerTypeId());
             preparedStatement.setString(2, customer.getName());
             preparedStatement.setString(3, customer.getDateOfBirth());
             preparedStatement.setInt(4, customer.getGender());
-            preparedStatement.setString(5, customer.getIdCard());
-            preparedStatement.setString(6, customer.getPhone());
-            preparedStatement.setString(7, customer.getEmail());
-            preparedStatement.setString(8, customer.getAddress());
+            preparedStatement.setString(5, customer.getPhone());
+            preparedStatement.setString(6, customer.getEmail());
+            preparedStatement.setString(7, customer.getAddress());
+            preparedStatement.setString(8, customer.getIdCard());
             preparedStatement.setInt(9, customer.getId());
             preparedStatement.executeUpdate();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
         } finally {
             try {
+                assert preparedStatement != null;
                 preparedStatement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
@@ -104,7 +102,7 @@ public class CustomerRepository implements ICustomerRepository {
         PreparedStatement preparedStatement = null;
         try {
             preparedStatement = this.baseRepository.getConnectionJavaToDB()
-                    .prepareStatement("SELECT ma_khach_hang,ma_loai_khach,ho_va_ten,ngay_sinh,gioi_tinh,so_cmnd,so_dien_thoai,email,dia_chi FROM khach_hang WHERE ma_khach_hang =?;");
+                    .prepareStatement("SELECT * FROM khach_hang WHERE ma_khach_hang =?;");
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
@@ -113,11 +111,11 @@ public class CustomerRepository implements ICustomerRepository {
                 String name = resultSet.getString("ho_va_ten");
                 String dateOfBirth = resultSet.getString("ngay_sinh");
                 Integer gender = resultSet.getInt("gioi_tinh");
-                String id_card = resultSet.getString("so_cmnd");
                 String phone = resultSet.getString("so_dien_thoai");
                 String email = resultSet.getString("email");
                 String address = resultSet.getString("dia_chi");
-                customer = new Customer(idN, idType, name, dateOfBirth, gender, id_card, phone, email, address);
+                String id_card = resultSet.getString("so_cmnd");
+                customer = new Customer(idN, idType, name, dateOfBirth, gender, phone, email, address, id_card);
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -130,6 +128,25 @@ public class CustomerRepository implements ICustomerRepository {
             }
         }
         return customer;
+    }
+
+    @Override
+    public void deleteCustomer(Integer id) {
+        PreparedStatement preparedStatement = null;
+        try {
+            Connection connection  =baseRepository.getConnectionJavaToDB();
+            preparedStatement = connection.prepareStatement("delete from khach_hang where ma_khach_hang = ?");
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                preparedStatement.close();
+            } catch (SQLException e){
+                e.printStackTrace();
+            }
+        }
     }
 
 

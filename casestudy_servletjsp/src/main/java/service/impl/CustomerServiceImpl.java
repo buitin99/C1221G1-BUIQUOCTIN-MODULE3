@@ -42,6 +42,10 @@ public class CustomerServiceImpl implements ICustomerService {
         iCustomerRepository.updateCustomer(customer);
     }
 
+    @Override
+    public void deleteCustomer(Integer id) {
+        iCustomerRepository.deleteCustomer(id);
+    }
 
 
     @Override

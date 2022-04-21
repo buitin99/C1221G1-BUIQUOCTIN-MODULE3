@@ -52,6 +52,10 @@
             <th>Address</th>
             <td><input type="text" name="address" id="dia_chi" value="<c:out value='${customer.address}'/>"></td>
         </tr>
+        <tr>
+            <th>IDCard</th>
+            <td><input type="text" name="idCard" id="so_cmnd" value="<c:out value='${customer.idCard}'/>"></td>
+        </tr>
     </table>
     <button type="submit">Update</button>
 </form>
