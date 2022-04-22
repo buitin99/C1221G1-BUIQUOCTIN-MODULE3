@@ -11,4 +11,6 @@ public interface IEmployee {
     Map<String, String> save(Employee employee);
     Employee findById(Integer id);
     void updateEmployee(Employee employee);
+    void deleteEmploye(Integer id);
+    List<Employee> search(String name, String positions, String divisions);
 }

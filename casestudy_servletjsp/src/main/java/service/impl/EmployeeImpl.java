@@ -36,4 +36,15 @@ public class EmployeeImpl implements IEmployee {
     public void updateEmployee(Employee employee) {
         employeeRepository.updateCustomer(employee);
     }
+
+    @Override
+    public void deleteEmploye(Integer id) {
+        employeeRepository.deleteEmployee(id);
+    }
+
+    @Override
+    public List<Employee> search(String name, String positions, String divisions) {
+
+        return employeeRepository.search(name,positions,divisions);
+    }
 }

@@ -6,7 +6,8 @@ use casestudy_database;
 create table casestudy_database.vi_tri(
 ma_vi_tri int,
 ten_vi_tri varchar(50),
-primary key(ma_vi_tri));
+primary key(ma_vi_tri)
+);
 
 create table casestudy_database.trinh_do(
 ma_trinh_do int,
@@ -31,7 +32,7 @@ ma_vi_tri int not null,
 ma_trinh_do int not null,
 ma_bo_phan int not null,
 primary key(ma_nhan_vien),
-foreign key(ma_vi_tri) references vi_tri(ma_vi_tri),
+foreign key(ma_vi_tri) references vi_tri(ma_vi_tri) ,
 foreign key(ma_trinh_do) references trinh_do(ma_trinh_do),
 foreign key(ma_bo_phan) references bo_phan(ma_bo_phan));
 
@@ -85,12 +86,12 @@ ma_hop_dong int auto_increment,
 ngay_lam_hop_dong datetime not null,
 ngay_ket_thuc_hop_dong datetime not null,
 tien_dat_coc double not null,
-ma_nhan_vien int not null,
-ma_khach_hang int not null,
+ma_nhan_vien int,
+ma_khach_hang int,
 ma_dich_vu int not null,
 primary key(ma_hop_dong),
-foreign key(ma_nhan_vien) references nhan_vien(ma_nhan_vien),
-foreign key(ma_khach_hang) references khach_hang(ma_khach_hang),
+foreign key(ma_nhan_vien) references nhan_vien(ma_nhan_vien)  on delete set null,
+foreign key(ma_khach_hang) references khach_hang(ma_khach_hang) on delete set null,
 foreign key(ma_dich_vu) references dich_vu(ma_dich_vu));
 
 create table casestudy_database.dich_vu_di_kem(
@@ -580,3 +581,5 @@ end //
 set foreign_key_checks =0;
 call sp_xoa_dich_vu_va_hd_room();
 set foreign_key_checks =1;
+
+

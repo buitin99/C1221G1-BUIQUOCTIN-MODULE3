@@ -5,6 +5,7 @@ import repository.BaseRepository;
 import repository.IEmployeeRepository;
 
 import java.awt.print.PrinterGraphics;
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -50,8 +51,40 @@ public class EmployeeRepository implements IEmployeeRepository {
     }
 
     @Override
-    public List<Employee> search(String name, String phone, String typeId) {
-        return null;
+    public List<Employee> search(String name, String positions, String divisions) {
+        List<Employee> employeeList = new ArrayList<>();
+        PreparedStatement preparedStatement = null;
+        try {
+            preparedStatement = this.baseRepository.getConnectionJavaToDB().prepareStatement("select* from nhan_vien where ho_ten like ? and ma_vi_tri like ? and ma_bo_phan like ?;");
+            preparedStatement.setString(1, "%" + name + "%");
+            preparedStatement.setString(2,"%" + positions + "%");
+            preparedStatement.setString(3,"%" + divisions + "%");
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()){
+                Integer id = resultSet.getInt("ma_nhan_vien");
+                String nameE = resultSet.getString("ho_ten");
+                String date = resultSet.getString("ngay_sinh");
+                String idCard = resultSet.getString("so_cmnd");
+                Double salary = resultSet.getDouble("luong");
+                String phone = resultSet.getString("so_dien_thoai");
+                String email = resultSet.getString("email");
+                String address = resultSet.getString("dia_chi");
+                Integer position = resultSet.getInt("ma_vi_tri");
+                Integer education = resultSet.getInt("ma_trinh_do");
+                Integer division = resultSet.getInt("ma_bo_phan");
+                employeeList.add(new Employee(id, nameE,date,idCard,salary,phone,email,address,position,education,division));
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                preparedStatement.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return employeeList;
     }
 
     @Override
@@ -143,5 +176,24 @@ public class EmployeeRepository implements IEmployeeRepository {
             }
         }
         return employee;
+    }
+
+    @Override
+    public void deleteEmployee(Integer id) {
+        PreparedStatement preparedStatement = null;
+        try {
+            Connection connection = baseRepository.getConnectionJavaToDB();
+            preparedStatement = connection.prepareStatement("delete from nhan_vien where ma_nhan_vien = ?");
+            preparedStatement.setInt(1,id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } finally {
+            try {
+                preparedStatement.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
     }
 }

@@ -14,6 +14,7 @@ import service.impl.PositionImpl;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
+import java.awt.print.PrinterGraphics;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -43,6 +44,25 @@ public class EmployeeController extends HttpServlet {
                 break;
             default:
                 listEmployee(request, response);
+        }
+    }
+
+    private void showSearchForm(HttpServletRequest request, HttpServletResponse response) {
+        String name = request.getParameter("nameSearch");
+        String positions = request.getParameter("positionSearch");
+        String divisions = request.getParameter("divisionSearch");
+        List<Employee> employeeList = iEmployee.search(name,positions,divisions);
+        request.setAttribute("employeLists",employeeList);
+        List<Division> divisionList = division.getListDivision();
+        request.setAttribute("division", divisionList);
+        List<Position> positionList = position.getListPosition();
+        request.setAttribute("position", positionList);
+        try {
+            request.getRequestDispatcher("/views/employee/list.jsp").forward(request,response);
+        } catch (ServletException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
@@ -119,9 +139,21 @@ public class EmployeeController extends HttpServlet {
             case "edit":
                 updateEmployee(request,response);
                 break;
+            case "delete":
+                deleteEmployee(request,response);
+                break;
+            case "search":
+                showSearchForm(request,response);
+                break;
             default:
                 break;
         }
+    }
+
+    private void deleteEmployee(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        Integer id = Integer.parseInt(request.getParameter("id"));
+        iEmployee.deleteEmploye(id);
+        response.sendRedirect("/employee");
     }
 
     private void updateEmployee(HttpServletRequest request, HttpServletResponse response) {
