@@ -25,10 +25,10 @@
     <div class="col-8" style="float:right;">
       <ul class="row" style="list-style-type: none">
         <li class="col-2"><a href="#">Home</a></li>
-        <li class="col-2"><a href="#">Employee</a></li>
+        <li class="col-2"><a href="/employee?action=employee">Employee</a></li>
         <li class="col-2"><a href="/customer?action=list">Customer</a></li>
         <li class="col-2"><a href="/service?action=service">Service</a></li>
-        <li class="col-2"><a href="#">Contract</a></li>
+        <li class="col-2"><a href="">Contract</a></li>
       </ul>
     </div>
     <div class="col-4">

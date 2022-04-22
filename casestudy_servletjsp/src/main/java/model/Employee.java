@@ -6,7 +6,7 @@ public class Employee {
 
     private Integer id;
     private String name;
-    private Date dateOfBirth;
+    private String dateOfBirth;
     private String idCard;
     private Double salary;
     private String phone;
@@ -19,7 +19,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(Integer id, String name, Date dateOfBirth, String idCard, Double salary, String phone, String email, String address, Integer positionId, Integer educationDegreeId, Integer divisionId) {
+    public Employee(Integer id, String name, String dateOfBirth, String idCard, Double salary, String phone, String email, String address, Integer positionId, Integer educationDegreeId, Integer divisionId) {
         this.id = id;
         this.name = name;
         this.dateOfBirth = dateOfBirth;
@@ -49,11 +49,11 @@ public class Employee {
         this.name = name;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
