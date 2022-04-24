@@ -42,6 +42,9 @@ public class EmployeeController extends HttpServlet {
             case "edit":
                 showEditForm(request,response);
                 break;
+            case  "search" :
+                showSearchForm(request,response);
+                break;
             default:
                 listEmployee(request, response);
         }
@@ -52,7 +55,7 @@ public class EmployeeController extends HttpServlet {
         String positions = request.getParameter("positionSearch");
         String divisions = request.getParameter("divisionSearch");
         List<Employee> employeeList = iEmployee.search(name,positions,divisions);
-        request.setAttribute("employeLists",employeeList);
+        request.setAttribute("employee",employeeList);
         List<Division> divisionList = division.getListDivision();
         request.setAttribute("division", divisionList);
         List<Position> positionList = position.getListPosition();
@@ -141,9 +144,6 @@ public class EmployeeController extends HttpServlet {
                 break;
             case "delete":
                 deleteEmployee(request,response);
-                break;
-            case "search":
-                showSearchForm(request,response);
                 break;
             default:
                 break;

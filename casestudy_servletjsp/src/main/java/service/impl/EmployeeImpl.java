@@ -44,7 +44,8 @@ public class EmployeeImpl implements IEmployee {
 
     @Override
     public List<Employee> search(String name, String positions, String divisions) {
-
-        return employeeRepository.search(name,positions,divisions);
+        return employeeRepository.search(name, positions, divisions);
     }
+
+
 }

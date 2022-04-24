@@ -74,7 +74,6 @@ public class EmployeeRepository implements IEmployeeRepository {
                 Integer division = resultSet.getInt("ma_bo_phan");
                 employeeList.add(new Employee(id, nameE,date,idCard,salary,phone,email,address,position,education,division));
             }
-
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         } finally {
