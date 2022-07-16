@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <th:block th:replace="~{layout :: top-bootstrap}"></th:block>
+</head>
+<body>
+    <h2>Update Music</h2>
+<form action="#" th:action="@{/update}" th:object="${music}" method="post">
+    <input type="hidden" th:field="*{id}">
+    <div>
+        Name:
+        <input type="text" th:field="*{name}">
+    </div>
+    <div>
+        Artist:
+        <input type="text" th:field="*{artist}">
+    </div>
+    <div>
+        Link:
+        <input type="text" th:field="*{link}">
+    </div>
+    <div>
+        Type:
+        <input type="text" th:field="*{type}">
+    </div>
+    <div>
+        <input type="submit" value="Update">
+    </div>
+</form>
+    <th:block th:replace="~{layout :: bot-bootstrap}"></th:block>
+</body>
+</html>

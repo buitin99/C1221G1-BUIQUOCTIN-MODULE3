@@ -22,7 +22,14 @@ public class CustomerServiceImpl implements ICustomerService {
     @Override
     public Map<String, String> save(Customer customer) {
         Map<String,String> map = new HashMap<>();
-        iCustomerRepository.save(customer);
+        if (customer.getName().equals("")){
+            map.put("name","Not null");
+        }else if (!customer.getName().matches("^[a-zA-Z ]+$")){
+            map.put("name","Invalid name");
+        }
+        if(map.isEmpty()){
+            iCustomerRepository.save(customer);
+        }
         return map;
     }
 
